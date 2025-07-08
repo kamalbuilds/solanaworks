@@ -5,6 +5,7 @@ import { HomeScreen } from "../screens/HomeScreen";
 import MaterialCommunityIcon from "@expo/vector-icons/MaterialCommunityIcons";
 import { useTheme } from "react-native-paper";
 import BlankScreen from "../screens/BlankScreen";
+import { ComputeNetworkScreen } from "../screens";
 
 const Tab = createBottomTabNavigator();
 
@@ -30,6 +31,14 @@ export function HomeNavigator() {
                   color={color}
                 />
               );
+            case "Compute":
+              return (
+                <MaterialCommunityIcon
+                  name={focused ? "cpu-64-bit" : "cpu-64-bit"}
+                  size={size}
+                  color={color}
+                />
+              );
             case "Blank":
               return (
                 <MaterialCommunityIcon
@@ -45,6 +54,7 @@ export function HomeNavigator() {
       })}
     >
       <Tab.Screen name="Home" component={HomeScreen} />
+      <Tab.Screen name="Compute" component={ComputeNetworkScreen} />
       <Tab.Screen name="Blank" component={BlankScreen} />
     </Tab.Navigator>
   );

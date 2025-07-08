@@ -1,0 +1,24 @@
+[package]
+name = "solmobile-compute"
+version = "0.1.0"
+description = "SolMobile Compute - Decentralized Physical Infrastructure Network"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "solmobile_compute"
+
+[features]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+cpi = ["no-entrypoint"]
+default = []
+
+[dependencies]
+anchor-lang = "0.29.0"
+anchor-spl = "0.29.0"
+spl-token = "4.0.0"
+spl-associated-token-account = "2.3.0"
+borsh = "0.10.3"
+solana-program = "1.17.0" 
