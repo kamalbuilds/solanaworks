@@ -1,105 +1,374 @@
-# Solana Mobile Expo Template
+# SolanaWorks
 
-This template is a ready-to-go Android Expo dApp that offers:
+> **Decentralized Mobile Compute Network Powered by AI**
 
-- Solana libraries: `web3.js`, Mobile Wallet Adapter, and `spl-token`.
-- Required polyfills like `crypto` and `Buffer` configured.
-- Pre-built React UI and re-usable hooks and code patterns like `useMobileWallet`.
+[![Solana](https://img.shields.io/badge/Solana-Native-green)](https://solana.com/)
+[![React Native](https://img.shields.io/badge/React%20Native-0.76-blue)](https://reactnative.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)](https://www.typescriptlang.org/)
+[![DePIN](https://img.shields.io/badge/DePIN-Enabled-purple)](https://coinmarketcap.com/academy/article/what-is-depin)
+[![AI](https://img.shields.io/badge/AI-Powered-orange)](https://openai.com/)
 
-**This is only fully functional on Android.**
+## 🌟 Overview
 
-<table>
-  <tr>
-    <td align="center">
-      <img src="./screenshots/screenshot1.png" alt="Scaffold dApp Screenshot 1" width=300 />
-    </td>
-    <td align="center">
-      <img src="./screenshots/screenshot2.png" alt="Scaffold dApp Screenshot 2" width=300 />
-    </td>
-    <td align="center">
-      <img src="./screenshots/screenshot3.png" alt="Scaffold dApp Screenshot 3" width=300 />
-    </td>
-  </tr>
-</table>
+**SolanaWorks** is a revolutionary Decentralized Physical Infrastructure Network (DePIN) that transforms mobile devices into a distributed compute network. By combining **Solana blockchain**, **AI optimization**, and **peer-to-peer networking**, we create an ecosystem where users can monetize their device's idle compute power while contributing to a global decentralized infrastructure.
 
-## Tech Stack
+### 🎯 Tagline
+*"Turn Your Phone Into a Crypto Powerhouse - Earn While You Sleep"*
 
-| Library               | Category          | Version | Description                                           |
-| --------------------- | ----------------- | ------- | ----------------------------------------------------- |
-| React Native          | Mobile Framework  | v0.76   | The best cross-platform mobile framework              |
-| Expo                  | SDK               | v52     | Allows (optional) Expo modules                        |
-| React                 | UI Framework      | v18.3   | The most popular UI framework in the world            |
-| Mobile Wallet Adapter | SDK               | v2.1    | Connect and request signing from mobile wallet apps   |
-| Solana web3.js        | SDK               | v1.78   | General Solana library for transactions and RPCs      |
-| spl-token             | SDK               | v0.4    | Library for building with Solana SPL tokens           |
-| React Native Paper    | Component Library | v5.12   | Production-ready components following Material Design |
-| React Navigation      | Navigation        | v6      | Performant and consistent navigation framework        |
-| React Query           | State management  | v5.24   | Async query management                                |
-| TypeScript            | Language          | v5      | Static typechecking                                   |
-| AsyncStorage          | Persistence       | v1.23   | State persistence                                     |
+---
 
-## Quick Start
+## 🔥 Problem Statement
+
+### The Mobile Compute Crisis
+- **Massive Waste**: Billions of mobile devices sit idle with untapped computational power
+- **Centralized Infrastructure**: Cloud computing is dominated by tech giants with high costs
+- **Limited Monetization**: Users have no way to earn from their device capabilities
+- **Resource Inefficiency**: Peak compute demands strain centralized systems
+- **Digital Divide**: Expensive cloud services limit access to compute resources
+
+### Current DePIN Limitations
+- Most DePIN projects focus on specialized hardware
+- High barriers to entry for average users
+- Limited mobile-first solutions
+- Poor user experience and complex setups
+- Insufficient AI-driven optimization
+
+---
+
+## 💡 Solution Statement
+
+**SolanaWorks** democratizes access to distributed computing by:
+
+### 🚀 Core Innovation
+1. **Mobile-First DePIN**: Turns everyday smartphones into compute nodes
+2. **AI-Powered Optimization**: Intelligent resource allocation and task distribution
+3. **Zero-Setup Required**: Seamless onboarding with Mobile Wallet Adapter
+4. **Real-Time Monitoring**: Production-grade device performance tracking
+5. **Tokenized Incentives**: Earn crypto rewards for contributing compute power
+
+### 🎯 Value Propositions
+- **For Users**: Passive income from device usage
+- **For Developers**: Affordable, scalable compute resources
+- **For Networks**: Decentralized, resilient infrastructure
+- **For Ecosystem**: Sustainable tokenomics and governance
+
+---
+
+## ✨ Key Features
+
+### 🏗️ **Phase 1: Foundation** ✅ COMPLETE
+- [x] **Solana Integration**: Native blockchain connectivity with Mobile Wallet Adapter
+- [x] **Smart Contracts**: Anchor-based DePIN protocols for device registration and rewards
+- [x] **Mobile Architecture**: Cross-platform React Native foundation
+
+### 📊 **Phase 2: Device Intelligence** ✅ COMPLETE
+- [x] **Real-Time Monitoring**: Live CPU, memory, thermal, and network metrics
+- [x] **Performance Analytics**: Historical trends and optimization insights
+- [x] **Capability Detection**: Automatic device specifications and tier classification
+- [x] **Battery Optimization**: Smart power management for sustained operation
+
+### 🤖 **Phase 3: AI Integration** ✅ COMPLETE
+- [x] **Solana Agent Kit**: AI-powered decision making for resource optimization
+- [x] **Intelligent Task Management**: Automated task acceptance based on device state
+- [x] **Dynamic Optimization**: Real-time performance tuning and resource allocation
+- [x] **Predictive Analytics**: ML-driven workload forecasting
+
+### 🌐 **Phase 4: P2P Network** ✅ COMPLETE
+- [x] **WebRTC Networking**: Direct peer-to-peer communication
+- [x] **DHT Task Distribution**: Kademlia-based decentralized task routing
+- [x] **Byzantine Verification**: Multi-peer consensus for result validation
+- [x] **Network Resilience**: Automatic failover and partition healing
+- [x] **Security Layer**: Cryptographic signatures and threat detection
+
+### 💰 **Phase 5: Token Economics** 🚧 IN PROGRESS
+- [ ] **Dynamic Rewards**: Performance-based token distribution
+- [ ] **Staking Mechanisms**: Node reputation and participation incentives
+- [ ] **Governance System**: Decentralized network parameter management
+- [ ] **Treasury Management**: Community-driven fund allocation
+
+---
+
+## 🏛️ Architecture Overview
+
+```mermaid
+graph TB
+    subgraph "Mobile App Layer"
+        UI[React Native UI]
+        MWA[Mobile Wallet Adapter]
+        Services[Core Services]
+    end
+    
+    subgraph "Intelligence Layer"
+        DevMon[Device Monitor]
+        PerfAn[Performance Analytics]
+        AIAgent[AI Optimization Agent]
+    end
+    
+    subgraph "P2P Network Layer"
+        NetMgr[Network Manager]
+        DHT[Task Distribution]
+        Verify[Task Verification]
+        Discovery[Peer Discovery]
+        Resilience[Network Resilience]
+    end
+    
+    subgraph "Blockchain Layer"
+        Anchor[Anchor Programs]
+        Solana[Solana Network]
+        Tokens[SPL Tokens]
+    end
+    
+    UI --> Services
+    Services --> DevMon
+    Services --> AIAgent
+    DevMon --> PerfAn
+    AIAgent --> NetMgr
+    NetMgr --> DHT
+    NetMgr --> Verify
+    NetMgr --> Discovery
+    NetMgr --> Resilience
+    DHT --> Anchor
+    Verify --> Anchor
+    Anchor --> Solana
+    Solana --> Tokens
+    MWA --> Solana
+```
+
+### 📋 Component Breakdown
+
+| Component | Purpose | Technology |
+|-----------|---------|------------|
+| **Device Monitor** | Real-time system metrics collection | Native React Native APIs |
+| **AI Agent** | Intelligent optimization decisions | Solana Agent Kit + OpenAI |
+| **P2P Network** | Decentralized task distribution | WebRTC + Kademlia DHT |
+| **Verification** | Byzantine fault-tolerant consensus | Cryptographic signatures |
+| **Blockchain** | Immutable records and payments | Solana + Anchor |
+
+---
+
+## 🛠️ Technology Stack
+
+### **Core Framework**
+- **React Native 0.76**: Cross-platform mobile development
+- **Expo 52**: Development toolkit and deployment
+- **TypeScript 5.0**: Type-safe development
+
+### **Blockchain & Crypto**
+- **Solana**: High-performance blockchain
+- **Anchor**: Smart contract framework
+- **Mobile Wallet Adapter**: Seamless wallet integration
+- **SPL Tokens**: Custom token implementation
+
+### **AI & Intelligence**
+- **Solana Agent Kit**: AI-powered blockchain interactions
+- **OpenAI Integration**: Advanced decision making
+- **TensorFlow.js**: On-device ML capabilities
+
+### **Networking & P2P**
+- **WebRTC**: Peer-to-peer communication
+- **Kademlia DHT**: Distributed hash table
+- **TweetNaCl**: Cryptographic operations
+- **Socket.io**: Real-time messaging
+
+### **UI & Experience**
+- **React Native Paper**: Material Design components
+- **React Navigation**: Navigation framework
+- **Victory Native**: Data visualization
+- **Expo Vector Icons**: Icon library
+
+---
+
+## 🚀 Quick Start
 
 ### Prerequisites
+- **Android Device/Emulator** (Primary platform)
+- **Node.js 18+** and **Yarn**
+- **Expo CLI** installed globally
+- **Solana Wallet** (Phantom, Solflare, etc.)
 
-- A free [Expo](https://expo.dev/) account.
-- An Android device/emulator to test your app
-  - Install an MWA compliant wallet app on your device/emulator.
-- If using Expo's cloud service `eas build`, no further setup is required.
-- If building locally:
-  - React Native and Android Envrionment [setup](https://docs.solanamobile.com/getting-started/development-setup)
+### Installation
 
-### Initialize
+```bash
+# Clone the repository
+git clone https://github.com/your-org/solanaworks.git
+cd solanaworks
 
-Run the CLI command:
+# Install dependencies
+yarn install
 
+# Start development server
+npx expo start --dev-client
+
+# For Android
+npx expo run:android
+
+# For local building
+npx eas build --profile development --platform android --local
 ```
-yarn create expo-app --template @solana-mobile/solana-mobile-expo-template
+
+### Configuration
+
+1. **Environment Setup**
+   ```bash
+   cp .env.example .env
+   # Configure your Solana RPC endpoints and API keys
+   ```
+
+2. **Wallet Integration**
+   - Install a Solana Mobile wallet app
+   - Connect your wallet through Mobile Wallet Adapter
+
+3. **Development Build**
+   - Use Expo custom development build (not Expo Go)
+   - Enable developer mode on Android device
+
+---
+
+## 📱 User Experience
+
+### Onboarding Flow
+1. **Connect Wallet**: One-tap Solana wallet connection
+2. **Device Registration**: Automatic capability detection
+3. **Network Join**: Seamless P2P network integration
+4. **Start Earning**: Begin contributing compute power
+
+### Core Interactions
+- **Real-time Dashboard**: Live device metrics and earnings
+- **Task Management**: View active and completed compute tasks
+- **Network Health**: Monitor P2P connectivity and performance
+- **Earnings Tracker**: Track token rewards and performance stats
+
+---
+
+## 🏆 Competitive Advantages
+
+### **Technical Innovation**
+- First mobile-native DePIN with AI optimization
+- Production-grade P2P networking on mobile
+- Real-time device monitoring without mocks
+- Byzantine fault-tolerant task verification
+
+### **User Experience**
+- Zero-knowledge blockchain interactions
+- Passive income generation
+- Battery-efficient operation
+- Intuitive mobile interface
+
+### **Economic Model**
+- Sustainable tokenomics
+- Performance-based rewards
+- Community governance
+- Low barriers to entry
+
+---
+
+## 🗺️ Roadmap
+
+### **Q1 2024: Foundation** ✅
+- [x] Core mobile app development
+- [x] Solana blockchain integration
+- [x] Device monitoring system
+
+### **Q2 2024: Intelligence** ✅
+- [x] AI agent integration
+- [x] Performance analytics
+- [x] Optimization algorithms
+
+### **Q3 2024: Network** ✅
+- [x] P2P networking layer
+- [x] Task distribution system
+- [x] Verification mechanisms
+
+### **Q4 2024: Economics** 🚧
+- [ ] Token economics implementation
+- [ ] Governance framework
+- [ ] Mainnet deployment
+
+### **2025: Scale**
+- [ ] Multi-platform expansion (iOS)
+- [ ] Enterprise partnerships
+- [ ] Advanced AI capabilities
+- [ ] Global network optimization
+
+---
+
+## 🧪 Testing & Development
+
+### **Running Tests**
+```bash
+# Unit tests
+yarn test
+
+# TypeScript checking
+npx tsc --noEmit
+
+# Lint checking
+yarn lint
+
+# Build verification
+yarn build:local
 ```
 
-Choose your project name then navigate into the directory.
+### **Development Workflow**
+1. **Feature Development**: Create feature branches
+2. **Type Safety**: Ensure TypeScript compliance
+3. **Testing**: Unit and integration tests
+4. **Code Review**: Peer review process
+5. **Deployment**: Automated builds with EAS
 
-### Build and run the app
+---
 
-Once your app is initialized, follow the **["Running the app"](https://docs.solanamobile.com/react-native/expo#running-the-app)** guide to launch the template as a custom development build.
+## 📖 Documentation
 
-## Troubleshooting
+- **[Architecture Guide](./docs/ARCHITECTURE.md)**: Detailed system design
+- **[API Reference](./docs/API.md)**: Complete API documentation
+- **[Deployment Guide](./docs/DEPLOYMENT.md)**: Production deployment
+- **[Contributing](./CONTRIBUTING.md)**: Development guidelines
 
-- `Metro has encountered an error: While trying to resolve module @solana-mobile/mobile-wallet-adapter-protocol...`
+---
 
-  - This is an on-going issue when using `npm install` to install the Expo template.
-  - To mitigate, clean your project dependencies and reinstall with `yarn install`
+## 🤝 Contributing
 
-- `The package 'solana-mobile-wallet-adapter-protocol' doesn't seem to be linked. Make sure: ...`
+We welcome contributions from the community! Please read our [Contributing Guidelines](./CONTRIBUTING.md) before submitting PRs.
 
-  - Ensure you are _NOT_ using Expo Go to run your app.
-  - You need to be using an [Expo custom development build](https://docs.solanamobile.com/react-native/expo#custom-development-build), rather than Expo Go.
+### **Development Setup**
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests and documentation
+5. Submit a pull request
 
-- `failed to connect to...`
+---
 
-  - This is an Expo error that can occur when trying to connect to the dev server on certain Wifi networks.
-  - To fix, try starting the dev server with the `--tunnel` command (`npx expo start --dev-client --tunnel`)
+## 📄 License
 
-- `Error: crypto.getRandomValues() not supported`
-  - This is a polyfill issue when trying to use certain functions from the `@solana/web3.js` in a React Native/Expo environment.
-  - To fix, ensure your App properly imports and uses the polyfills like in this [guide](http://docs.solanamobile.com/react-native/expo#step-3-update-appjs-with-polyfills).
+This project is licensed under the **MIT License** - see the [LICENSE](./LICENSE) file for details.
 
-<br>
+---
 
-- `error Failed to load configuration of your project.`
-  - Same as above, but for `yarn`. [Uninstall and reinstall](https://github.com/react-native-community/cli#updating-the-cli) the CLI through yarn.
+## 🌐 Connect With Us
 
-<br>
+- **Website**: [solanaworks.io](https://solanaworks.io)
+- **Twitter**: [@SolanaWorks](https://twitter.com/solanaworks)
+- **Discord**: [Join our community](https://discord.gg/solanaworks)
+- **Documentation**: [docs.solanaworks.io](https://docs.solanaworks.io)
 
-- `Looks like your iOS environment is not properly set`:
-  - You can ignore this during template initialization and build the Android app as normal. This template is only compatible with Android.
+---
 
-<br>
+## 🙏 Acknowledgments
 
-- `Usage Error: It seems you are trying to add a package using a https:... url; we now require package names to be explicitly specified.`
-  - This error happens on certain versions of `yarn`, and occurs if you try to initialize the template through the Github repo URL, rather than the npm package. To avoid this, use the `@solana-mobile/solana-mobile-dapp-scaffold` package as specified, or downgrade your `yarn` version to classic (1.22.x).
+- **Solana Foundation** for blockchain infrastructure
+- **Solana Mobile** for Mobile Wallet Adapter
+- **OpenAI** for AI capabilities
+- **React Native Community** for mobile framework
+- **DePIN Alliance** for ecosystem support
 
-<br>
+---
 
-- `error Couldn't find the ".../@solana-mobile/solana-mobile-dapp-scaffold/template.config.js file inside "@solana-mobile/solana-mobile-dapp-scaffold" template.`
-  - This is a [known error](https://github.com/react-native-community/cli/issues/1924) that occurs with certain versions of `yarn` (>= 3.5.0). It is fixed by running the cli command with the `--npm` flag or downgrading your version of `yarn`.
+<div align="center">
+
+**Built with ❤️ for the Solana Hackathon**
+
+*Empowering the future of decentralized infrastructure, one mobile device at a time.*
+
+</div>
