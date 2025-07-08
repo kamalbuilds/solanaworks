@@ -236,11 +236,7 @@ export default function ComputeNetworkScreen() {
 
       <NetworkStats networkState={networkState} />
 
-      <DeviceInfo
-        deviceSpecs={deviceSpecs}
-        deviceStatus={deviceStatus}
-        isLoading={isLoading}
-      />
+              <DeviceInfo />
 
       {renderDeviceActions()}
 
