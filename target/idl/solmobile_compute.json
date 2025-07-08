@@ -1,0 +1,657 @@
+{
+  "address": "SoMC111111111111111111111111111111111111111",
+  "metadata": {
+    "name": "solmobile_compute",
+    "version": "0.1.0",
+    "spec": "0.1.0",
+    "description": "SolMobile Compute - Decentralized Physical Infrastructure Network"
+  },
+  "instructions": [
+    {
+      "name": "assign_task",
+      "discriminator": [
+        158,
+        142,
+        217,
+        16,
+        175,
+        209,
+        92,
+        237
+      ],
+      "accounts": [
+        {
+          "name": "task_account",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  116,
+                  97,
+                  115,
+                  107
+                ]
+              },
+              {
+                "kind": "arg",
+                "path": "task_id"
+              }
+            ]
+          }
+        },
+        {
+          "name": "device_account",
+          "writable": true
+        },
+        {
+          "name": "authority",
+          "signer": true
+        }
+      ],
+      "args": [
+        {
+          "name": "task_id",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "complete_task",
+      "discriminator": [
+        109,
+        167,
+        192,
+        41,
+        129,
+        108,
+        220,
+        196
+      ],
+      "accounts": [
+        {
+          "name": "task_account",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  116,
+                  97,
+                  115,
+                  107
+                ]
+              },
+              {
+                "kind": "arg",
+                "path": "task_id"
+              }
+            ]
+          }
+        },
+        {
+          "name": "device_account",
+          "writable": true
+        },
+        {
+          "name": "network_state",
+          "writable": true
+        }
+      ],
+      "args": [
+        {
+          "name": "task_id",
+          "type": "string"
+        },
+        {
+          "name": "result_hash",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "initialize",
+      "discriminator": [
+        175,
+        175,
+        109,
+        31,
+        13,
+        152,
+        155,
+        237
+      ],
+      "accounts": [
+        {
+          "name": "network_state",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  110,
+                  101,
+                  116,
+                  119,
+                  111,
+                  114,
+                  107,
+                  95,
+                  115,
+                  116,
+                  97,
+                  116,
+                  101
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "authority",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "register_device",
+      "discriminator": [
+        210,
+        151,
+        56,
+        68,
+        22,
+        158,
+        90,
+        193
+      ],
+      "accounts": [
+        {
+          "name": "device_account",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  100,
+                  101,
+                  118,
+                  105,
+                  99,
+                  101
+                ]
+              },
+              {
+                "kind": "arg",
+                "path": "device_id"
+              }
+            ]
+          }
+        },
+        {
+          "name": "network_state",
+          "writable": true
+        },
+        {
+          "name": "owner",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "device_id",
+          "type": "string"
+        },
+        {
+          "name": "device_specs",
+          "type": {
+            "defined": {
+              "name": "DeviceSpecs"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "submit_task",
+      "discriminator": [
+        148,
+        183,
+        26,
+        116,
+        107,
+        213,
+        118,
+        213
+      ],
+      "accounts": [
+        {
+          "name": "task_account",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  116,
+                  97,
+                  115,
+                  107
+                ]
+              },
+              {
+                "kind": "arg",
+                "path": "task_id"
+              }
+            ]
+          }
+        },
+        {
+          "name": "submitter",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "task_id",
+          "type": "string"
+        },
+        {
+          "name": "task_type",
+          "type": {
+            "defined": {
+              "name": "TaskType"
+            }
+          }
+        },
+        {
+          "name": "compute_requirements",
+          "type": {
+            "defined": {
+              "name": "ComputeRequirements"
+            }
+          }
+        },
+        {
+          "name": "reward_amount",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "update_device_status",
+      "discriminator": [
+        112,
+        232,
+        154,
+        217,
+        65,
+        52,
+        123,
+        111
+      ],
+      "accounts": [
+        {
+          "name": "device_account",
+          "writable": true
+        },
+        {
+          "name": "owner",
+          "signer": true,
+          "relations": [
+            "device_account"
+          ]
+        }
+      ],
+      "args": [
+        {
+          "name": "is_active",
+          "type": "bool"
+        },
+        {
+          "name": "current_load",
+          "type": "u8"
+        }
+      ]
+    }
+  ],
+  "accounts": [
+    {
+      "name": "DeviceAccount",
+      "discriminator": [
+        103,
+        244,
+        245,
+        87,
+        0,
+        208,
+        80,
+        103
+      ]
+    },
+    {
+      "name": "NetworkState",
+      "discriminator": [
+        212,
+        237,
+        148,
+        56,
+        97,
+        245,
+        51,
+        169
+      ]
+    },
+    {
+      "name": "TaskAccount",
+      "discriminator": [
+        235,
+        32,
+        10,
+        23,
+        81,
+        60,
+        170,
+        203
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "TaskNotPending",
+      "msg": "Task is not in pending status"
+    },
+    {
+      "code": 6001,
+      "name": "DeviceNotActive",
+      "msg": "Device is not active"
+    },
+    {
+      "code": 6002,
+      "name": "TaskNotAssigned",
+      "msg": "Task is not assigned"
+    },
+    {
+      "code": 6003,
+      "name": "DeviceNotAssigned",
+      "msg": "Device is not assigned to this task"
+    },
+    {
+      "code": 6004,
+      "name": "InsufficientCapabilities",
+      "msg": "Insufficient device capabilities"
+    },
+    {
+      "code": 6005,
+      "name": "TaskExpired",
+      "msg": "Task expired"
+    }
+  ],
+  "types": [
+    {
+      "name": "ComputeRequirements",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "cpu_cores_required",
+            "type": "u8"
+          },
+          {
+            "name": "ram_gb_required",
+            "type": "u8"
+          },
+          {
+            "name": "storage_gb_required",
+            "type": "u16"
+          },
+          {
+            "name": "gpu_required",
+            "type": "bool"
+          },
+          {
+            "name": "estimated_duration",
+            "type": "u32"
+          }
+        ]
+      }
+    },
+    {
+      "name": "DeviceAccount",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "owner",
+            "type": "pubkey"
+          },
+          {
+            "name": "device_id",
+            "type": "string"
+          },
+          {
+            "name": "specs",
+            "type": {
+              "defined": {
+                "name": "DeviceSpecs"
+              }
+            }
+          },
+          {
+            "name": "is_active",
+            "type": "bool"
+          },
+          {
+            "name": "reputation_score",
+            "type": "u16"
+          },
+          {
+            "name": "total_tasks_completed",
+            "type": "u32"
+          },
+          {
+            "name": "total_tokens_earned",
+            "type": "u64"
+          },
+          {
+            "name": "current_load",
+            "type": "u8"
+          },
+          {
+            "name": "last_active",
+            "type": "i64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "DeviceSpecs",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "cpu_cores",
+            "type": "u8"
+          },
+          {
+            "name": "ram_gb",
+            "type": "u8"
+          },
+          {
+            "name": "storage_gb",
+            "type": "u16"
+          },
+          {
+            "name": "gpu_available",
+            "type": "bool"
+          },
+          {
+            "name": "network_speed",
+            "type": "u32"
+          }
+        ]
+      }
+    },
+    {
+      "name": "NetworkState",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "authority",
+            "type": "pubkey"
+          },
+          {
+            "name": "total_devices",
+            "type": "u32"
+          },
+          {
+            "name": "total_tasks_completed",
+            "type": "u64"
+          },
+          {
+            "name": "total_tokens_distributed",
+            "type": "u64"
+          },
+          {
+            "name": "network_utilization",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "TaskAccount",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "submitter",
+            "type": "pubkey"
+          },
+          {
+            "name": "task_id",
+            "type": "string"
+          },
+          {
+            "name": "task_type",
+            "type": {
+              "defined": {
+                "name": "TaskType"
+              }
+            }
+          },
+          {
+            "name": "compute_requirements",
+            "type": {
+              "defined": {
+                "name": "ComputeRequirements"
+              }
+            }
+          },
+          {
+            "name": "reward_amount",
+            "type": "u64"
+          },
+          {
+            "name": "status",
+            "type": {
+              "defined": {
+                "name": "TaskStatus"
+              }
+            }
+          },
+          {
+            "name": "assigned_device",
+            "type": {
+              "option": "pubkey"
+            }
+          },
+          {
+            "name": "result_hash",
+            "type": "string"
+          },
+          {
+            "name": "created_at",
+            "type": "i64"
+          },
+          {
+            "name": "assigned_at",
+            "type": "i64"
+          },
+          {
+            "name": "completed_at",
+            "type": "i64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "TaskStatus",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "Pending"
+          },
+          {
+            "name": "Assigned"
+          },
+          {
+            "name": "InProgress"
+          },
+          {
+            "name": "Completed"
+          },
+          {
+            "name": "Failed"
+          }
+        ]
+      }
+    },
+    {
+      "name": "TaskType",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "DataProcessing"
+          },
+          {
+            "name": "MLInference"
+          },
+          {
+            "name": "ImageProcessing"
+          },
+          {
+            "name": "VideoTranscoding"
+          },
+          {
+            "name": "GeneralCompute"
+          }
+        ]
+      }
+    }
+  ]
+}
