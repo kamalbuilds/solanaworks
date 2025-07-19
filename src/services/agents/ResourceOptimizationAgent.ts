@@ -62,7 +62,7 @@ export class ResourceOptimizationAgent {
     this.agent = new SolanaAgentKit(
       config.privateKey,
       config.rpcUrl,
-      config.openAIApiKey ? { OPENAI_API_KEY: config.openAIApiKey } : undefined
+      config.openAIApiKey || ''
     );
   }
 
