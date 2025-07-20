@@ -1,9 +1,33 @@
-import { SolanaAgentKit } from 'solana-agent-kit';
+// import { SolanaAgentKit } from 'solana-agent-kit';
 import { ResourceOptimizationAgent, ResourceOptimizationDecision } from './ResourceOptimizationAgent';
 import { DeviceMonitor } from '../DeviceMonitor';
 import { PerformanceAnalytics, TaskPerformanceMetrics } from '../PerformanceAnalytics';
 import { ComputeService } from '../ComputeService';
 import { PublicKey } from '@solana/web3.js';
+
+// Mock SolanaAgentKit replacement
+class MockAgentKit {
+  private privateKey: string;
+  private rpcUrl: string;
+  private apiKey: string;
+
+  constructor(privateKey: string, rpcUrl: string, apiKey: string) {
+    this.privateKey = privateKey;
+    this.rpcUrl = rpcUrl;
+    this.apiKey = apiKey;
+    console.log('Using mock Agent Kit implementation');
+  }
+
+  async predict(input: any): Promise<any> {
+    // Simple mock implementation
+    console.log('Mock Agent prediction requested with:', input);
+    return {
+      decision: Math.random() > 0.3,
+      confidence: Math.random() * 100,
+      reasoning: 'Mock agent reasoning'
+    };
+  }
+}
 
 export interface TaskRequest {
   id: string;
@@ -62,7 +86,8 @@ export interface AgentConfiguration {
 }
 
 export class TaskManagementAgent {
-  private agent: SolanaAgentKit;
+  // private agent: SolanaAgentKit;
+  private agent: MockAgentKit;
   private resourceOptimizer: ResourceOptimizationAgent;
   private deviceMonitor: DeviceMonitor;
   private performanceAnalytics: PerformanceAnalytics;
@@ -75,7 +100,7 @@ export class TaskManagementAgent {
   private taskHistory: TaskPerformanceMetrics[] = [];
   
   private isRunning: boolean = false;
-  private processingInterval: NodeJS.Timeout | null = null;
+  private processingInterval: ReturnType<typeof setInterval> | null = null;
 
   constructor(
     config: AgentConfiguration,
@@ -90,8 +115,8 @@ export class TaskManagementAgent {
     this.performanceAnalytics = performanceAnalytics;
     this.computeService = computeService;
 
-    // Initialize Solana Agent Kit
-    this.agent = new SolanaAgentKit(
+    // Initialize Mock Agent Kit
+    this.agent = new MockAgentKit(
       config.privateKey,
       config.rpcUrl,
       config.openAIApiKey || ''
